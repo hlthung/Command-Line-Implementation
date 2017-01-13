@@ -1,2 +1,5 @@
 # String-Manipulations
-String Manipulations in Python, text editor [basic concept]
+TextEditor with basic functions and a command-line style interface where users type in commands and the program parses through the commands to determine the functions to call.
+
+For reference,
+Tags: Self-learning, Inspired by my school assigment
