@@ -12,7 +12,7 @@ def write_filename(a_list,filename):
     return a_list
 
 def frequency(a_list):
-    my_count = {}#Create a set first
+    my_count = {}
     for word in range(1,len(a_list)+1):
         a = a_list[word]#To access the sentences per line
         for i in a.split():#To access the words per sentence  
@@ -24,8 +24,7 @@ def frequency(a_list):
 
 def undo(stack):
     a_list = List()
-    stack.pop()#To pop the last one
-    #print(stack)
+    stack.pop()
     a = stack.peek()#a to be the top one
     for i in a:#get the values of a
         a_list.append(i)
@@ -46,13 +45,12 @@ class TextEditor(cmd.Cmd):
             stack = self.stack
             ans = a.split(" ")#To seperate it by space
             first = int(ans[0])
-            second = ans[1] #Because input can be int or string
+            second = ans[1] #Input can be int or string
             a_list.insert(first,second)
             print(a_list)
             for i in range(1,len(a_list)+1):
-                temp.append(a_list[i])#Append all the things first, let it becomes ['A','C']
-            stack.push(temp)#Then push inside stack
-            #which is what I want(can perform other operation)
+                temp.append(a_list[i])
+            stack.push(temp)
             print(stack)
             self.array = a_list
             self.stack = stack
@@ -68,9 +66,8 @@ class TextEditor(cmd.Cmd):
             a_list = from_file(filename)
             print(a_list)
             for i in range(1,len(a_list)+1):
-                temp.append(a_list[i])#Append all the things first, to let it becomes ['A','C']
-            stack.push(temp)#Then push inside stack
-            #which is what I want(can perform other operation)
+                temp.append(a_list[i])
+            stack.push(temp)
             print(stack)
             self.array = a_list
         except Exception:
@@ -109,8 +106,7 @@ class TextEditor(cmd.Cmd):
                 a_list = None
                 print(a_list)
                 temp.append(a_list)
-                stack.push(temp)#Then push inside stack
-                #which is what I want(can perform other operation)
+                stack.push(temp)
                 print(stack)  
                 self.array = a_list
                 self.stack = stack
@@ -119,9 +115,8 @@ class TextEditor(cmd.Cmd):
                 a_list.delete(b)
                 print(a_list)
                 for i in range(1,len(a_list)+1):
-                    temp.append(a_list[i])#Append all the things first, to let it becomes ['A','C']
-                stack.push(temp)#Then push inside stack
-                #which is what I want(can perform other operation)
+                    temp.append(a_list[i])
+                stack.push(temp)
                 print(stack)
                 self.array = a_list
                 self.stack = stack
@@ -150,7 +145,7 @@ class TextEditor(cmd.Cmd):
             a = undo(stack)
             print(a)
             print(stack)
-            self.array = a#Now set a_list is the stack after operated
+            self.array = a
         except Exception:
             print("?")
             
