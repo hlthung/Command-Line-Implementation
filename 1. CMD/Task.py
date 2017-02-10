@@ -107,7 +107,6 @@ class List:
         :post: append array
         :desc: to append array
         """
-        #define got_space
         got_space = not self.count >= len(self.array)
         if got_space:
             self.array[self.count] = item
@@ -124,7 +123,6 @@ class List:
         :pre: index and item are defined
         :post: item is insert with a specific position
         :desc: to insert item BEFORE the specific position
-        :assump: if user input index=1, 'None' keyword will appear
         """
         #check range (index start with 1 to N) and it's not allowed to insert before first position
         if index-1 < 0 or index-1 > self.count:
@@ -149,7 +147,6 @@ class List:
         else:
             #if element in array is not the item, return it into array
             self.array = [i for i in self.array if i != item]
-            #Since the function can only remove 1 item per time
             self.count -= 1
             
     def delete(self, index):
@@ -161,7 +158,7 @@ class List:
         #index start from 1
         valid_index = 0 <= index-1 < self.count
         if valid_index:
-            #to rearrange the position
+            #rearrange the position
             for i in range(index-1, self.count-1):
                 self.array[i] = self.array[i+1]
             self.count -=1
