@@ -1,6 +1,5 @@
 import unittest
-from Task_4 import from_file
-from Task_4 import List
+from Task import *
 
 class Test_value(unittest.TestCase):
     """
