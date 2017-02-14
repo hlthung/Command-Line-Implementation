@@ -1,7 +1,5 @@
 import unittest
-from Task_4 import from_file
-from Task_4 import List
-from Task_7 import undo
+from CMD import *
 from stackclass import Stack
 
 class Test_value(unittest.TestCase):
